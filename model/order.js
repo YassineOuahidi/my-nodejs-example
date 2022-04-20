@@ -2,6 +2,8 @@
 const COLLECTION_NAME = 'orders';
 
 const { ObjectId } = require('mongodb')
+
+
 const { getCollection } = require('./db.js');
 
 
@@ -20,8 +22,8 @@ const getOrder = async (_id) => {
 
 const createOrder = async (order) => {
     const collection = await getCollection(COLLECTION_NAME);
-    const order = await collection.insert(order).toArray();
-    return order;
+    const res = await collection.insert(order).toArray();
+    return res;
 }
 
 const deleteOrder = async (id) => {
@@ -49,8 +51,5 @@ const updateOrder = async (id, order) => {
 
 module.exports = {
     getOrders,
-    getOrder,
-    updateOrder,
-    createOrder,
-    deleteOrder
+    getOrder
 }

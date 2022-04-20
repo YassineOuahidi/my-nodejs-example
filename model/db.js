@@ -1,8 +1,12 @@
 const { MongoClient } = require('mongodb');
+
 require('dotenv').config();
+
 
 const dbName = 'greppi';
 const url = process.env.MONGO_CONNECTION;
+
+
 
 let client = null;
 
