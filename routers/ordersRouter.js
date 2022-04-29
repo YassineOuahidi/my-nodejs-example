@@ -7,12 +7,9 @@ const orderController = require('../controller/orderController.js')
 
 
 // questo è come se fosse /orders/
-router.get('/', async (req, res) => {
-    const orders = await getOrders();
-    res.status(200).json(orders);
-});
+router.get('/', orderController.orders);
 //questo è come se fosse orders/:id
-router.get('/:id', orderController.order);
+router.get('/:_id', orderController.order);
 
 
 module.exports = router;

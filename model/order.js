@@ -17,6 +17,7 @@ const getOrders = async () => {
 const getOrder = async (_id) => {
     const collection = await getCollection(COLLECTION_NAME);
     const order = await collection.find({_id: new ObjectId(_id)}).toArray();
+    console.log(order);
     return order;
 }
 
